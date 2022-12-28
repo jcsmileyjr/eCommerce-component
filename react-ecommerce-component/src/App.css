@@ -1,8 +1,17 @@
 .App {
-  text-align: center;
   background-image: url(./assets/bg__btm-right.svg), url(./assets/bg__left.svg), url(./assets/bg__top-right.svg);
   background-position: right bottom, left top, right top;
   background-repeat: no-repeat, no-repeat,no-repeat;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  margin: 40px 20px;
+  min-width: 35vw;
+  border-radius: 10px;
+  background-color: ghostwhite;
+  padding: 0 20px;
 }
 
