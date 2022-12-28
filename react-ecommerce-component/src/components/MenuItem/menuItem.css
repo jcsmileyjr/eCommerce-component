@@ -1,6 +1,6 @@
 .menuItem--container {
     display: flex;
-    background-color:aquamarine;
+    /* background-color:aquamarine; */
     border-radius: 15px;
     margin:50px 0;
 }
@@ -45,4 +45,16 @@
 
 .menuItem__check--style {
     margin-right: 10px;
+}
+
+.lightBlue {
+    background-color: lightsteelblue;
+}
+
+.lightPink {
+    background-color: lightcoral;
+}
+
+.hide {
+    display: none;
 }

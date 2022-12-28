@@ -8,8 +8,8 @@ function App() {
     <div className="App">      
       <section id="menu">
         <h1>To Go Menu</h1>
-        <MenuItem pic={FrenchFries} foodTitle="French Fries with Ketchup" foodPrice="$2.23" />
-        <MenuItem pic={SalmanPlate} foodTitle="Salmon and Vegetables" foodPrice="$5.12" />
+        <MenuItem pic={FrenchFries} foodTitle="French Fries with Ketchup" foodPrice="$2.23" bgColor="lightBlue" isInCart={false} />
+        <MenuItem pic={SalmanPlate} foodTitle="Salmon and Vegetables" foodPrice="$5.12" bgColor="lightPink" isInCart={true} />
       </section>
       <section id="cart">
         <h1>Your Cart</h1>
