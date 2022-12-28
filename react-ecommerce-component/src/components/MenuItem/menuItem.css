@@ -1,0 +1,44 @@
+.menuItem--container {
+    display: flex;
+    background-color:aquamarine;
+    border-radius: 15px;
+    margin:50px 0;
+}
+
+.menuItem__image--style {
+    max-width: 150px;
+    position: relative;
+    top: -40px;
+}
+
+.menuItem__details--container {
+    padding-top: 20px;
+    padding-left: 15px;
+    margin-right: 20px;
+}
+
+.menuItem__foodTitle--style {
+    font-weight: bold;
+}
+
+.menuItem__foodPrice--style {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.menuItem__inCart--container {
+    background-color: black;
+    display: flex;
+    color: white;
+    border-radius: 30px;
+    justify-content: center;
+    max-width: 70%;
+    max-height: 40px;
+    align-items: center;
+    position: relative;
+    top: 10px;
+}
+
+.menuItem__check--style {
+    margin-right: 10px;
+}
