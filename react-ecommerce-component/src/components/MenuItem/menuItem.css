@@ -28,6 +28,7 @@
 .menuItem__foodPrice--style {
     font-weight: bold;
     font-size: xx-large;
+    margin-top: 5px;
 }
 
 .menuItem__inCart--container {
@@ -40,7 +41,7 @@
     max-height: 40px;
     align-items: center;
     position: relative;
-    top: 15px;
+    top: 30px;
 }
 
 .menuItem__check--style {
