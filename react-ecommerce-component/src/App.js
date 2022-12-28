@@ -15,11 +15,11 @@ function App() {
         <h1>To Go Menu</h1>
         <MenuItem pic={FrenchFries} foodTitle="French Fries with Ketchup" foodPrice="$2.23" bgColor="lightBlue" isInCart={false} />
         <MenuItem pic={SalmanPlate} foodTitle="Salmon and Vegetables" foodPrice="$5.12" bgColor="lightPink" isInCart={true} />
-        <MenuItem pic={BaconEggs} foodTitle="Bacon and Eggs All-Star Breakfast" foodPrice="$2.23" bgColor="lightBlue" isInCart={false} />
-        <MenuItem pic={ChickenSalad} foodTitle="Chrunchy Chicken Salad" foodPrice="$5.12" bgColor="lightPink" isInCart={true} />
-        <MenuItem pic={Spaghetti} foodTitle="Hot Spaghetti and Meat Sauce" foodPrice="$2.23" bgColor="lightBlue" isInCart={false} />
-        <MenuItem pic={Ravioli} foodTitle="Delicous Meaty Ravioli" foodPrice="$5.12" bgColor="lightPink" isInCart={true} />
-        <MenuItem pic={Tortellini} foodTitle="Fried Tortellini" foodPrice="$2.23" bgColor="lightBlue" isInCart={false} />
+        <MenuItem pic={BaconEggs} foodTitle="Bacon and Eggs All-Star Breakfast" foodPrice="$3.39" bgColor="lightBlue" isInCart={false} />
+        <MenuItem pic={ChickenSalad} foodTitle="Chrunchy Chicken Salad" foodPrice="$4.50" bgColor="lightPink" isInCart={true} />
+        <MenuItem pic={Spaghetti} foodTitle="Hot Spaghetti and Meat Sauce" foodPrice="$4.15" bgColor="lightBlue" isInCart={false} />
+        <MenuItem pic={Ravioli} foodTitle="Delicous Meaty Ravioli" foodPrice="$6.25" bgColor="lightPink" isInCart={true} />
+        <MenuItem pic={Tortellini} foodTitle="Fried Tortellini" foodPrice="$7.00" bgColor="lightBlue" isInCart={false} />
       </section>
       <section id="cart">
         <h1>Your Cart</h1>
