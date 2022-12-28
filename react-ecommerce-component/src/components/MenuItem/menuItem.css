@@ -12,9 +12,13 @@
 }
 
 .menuItem__details--container {
-    padding-top: 20px;
+    padding-top: 5px;
     padding-left: 15px;
     margin-right: 20px;
+}
+
+.menuItem__details--container > p {
+    margin-bottom: 0;
 }
 
 .menuItem__foodTitle--style {
@@ -36,7 +40,7 @@
     max-height: 40px;
     align-items: center;
     position: relative;
-    top: 10px;
+    top: 15px;
 }
 
 .menuItem__check--style {
