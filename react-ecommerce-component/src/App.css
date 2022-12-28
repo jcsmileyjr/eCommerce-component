@@ -2,7 +2,7 @@
   background-image: url(./assets/bg__btm-right.svg), url(./assets/bg__left.svg), url(./assets/bg__top-right.svg);
   background-position: right bottom, left top, right top;
   background-repeat: no-repeat, no-repeat,no-repeat;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
 }

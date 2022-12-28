@@ -1,8 +1,8 @@
 .menuItem--container {
     display: flex;
-    /* background-color:aquamarine; */
-    border-radius: 15px;
     margin:50px 0;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .menuItem__image--style {
