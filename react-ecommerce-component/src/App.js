@@ -24,11 +24,15 @@ function App() {
    * @param {number} id 
    */
   const removePlate = (id) => {
-    // Update the CartItem's number of plates
+    // Update the CartItem's number of plates and if it's "0", remove the "in cart" notification
     setCart(cart.map((plate) => {
       if(plate.foodID === id){
         if(plate.numberOfPlates > 0){
           plate.numberOfPlates -= 1;
+        }
+
+        if(plate.numberOfPlates === 0){
+          removeInCartNotification(id);
         }
         return plate;
       }else{
@@ -38,9 +42,21 @@ function App() {
     
     // Remove the CartItem plate when it's zero
     setCart(cart.filter((plate) => plate.numberOfPlates !== 0))
+  }
 
-    //Update the MenuItem "in cart" notificiation
-    
+  /**
+   * Remove the "in cart" notification on the Menu item when the cart's plate count is zero
+   * @param {number} id 
+   */
+  const removeInCartNotification = (id) => {
+    setMenu(menu.map((item) => {
+      if(item.foodID === id){
+        item.isInCart = false;
+        return item;
+      }else{
+        return item;
+      }
+    }))
   }
 
   /**
