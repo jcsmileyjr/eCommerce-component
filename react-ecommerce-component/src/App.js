@@ -124,6 +124,10 @@ function App() {
       <section id="cart">
         <h1>Your Cart</h1>
         {/**Displays plate objects in the cart state */}
+        {cart.length === 0 &&
+          <h2>Your Cart is Empty</h2>
+
+        }
         {
           cart.map((item, id) => (
             <CartItem removePlate={() => removePlate(item.foodID)} addPlate={()=> addPlate(item.foodID)} key={item.foodID} plateCount={item.numberOfPlates} pic={plateImages[item.foodID]} itemTitle={menu[item.foodID].foodTitle} itemPrice={menu[item.foodID].foodPrice} />
