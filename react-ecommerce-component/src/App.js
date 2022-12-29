@@ -20,6 +20,20 @@ function App() {
   const [cart, setCart] = useState([]);
 
   /**
+   * Function to add a plate to the cart
+   */
+  const addPlate = (id) => {
+    setCart(cart.map((plate) => {
+      if(plate.foodID === id){
+        plate.numberOfPlates += 1;
+        return plate;
+      }else{
+        return plate;
+      }
+    }))
+  }
+
+  /**
    * Function to add one plate meal type to the cart when the user click a menu item and update the 
    * menu's "In cart" notification.
    * @param {string} id - Id of menu item chosen by the  user
@@ -71,7 +85,7 @@ function App() {
         {/**Displays plate objects in the cart state */}
         {
           cart.map((item, id) => (
-            <CartItem key={item.foodID} plateCount={item.numberOfPlates} pic={plateImages[item.foodID]} itemTitle={menu[item.foodID].foodTitle} itemPrice={menu[item.foodID].foodPrice} />
+            <CartItem addPlate={()=> addPlate(item.foodID)} key={item.foodID} plateCount={item.numberOfPlates} pic={plateImages[item.foodID]} itemTitle={menu[item.foodID].foodTitle} itemPrice={menu[item.foodID].foodPrice} />
           ))
         }
       </section>
