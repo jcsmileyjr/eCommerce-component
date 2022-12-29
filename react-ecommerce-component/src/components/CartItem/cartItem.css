@@ -5,6 +5,7 @@
 
 .cartItem__details--container {
     padding-left: 10px;
+    flex: 1;
 }
 
 .cartItem__details--container > p {
@@ -26,7 +27,7 @@
 .control--container {
     flex:1;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 
