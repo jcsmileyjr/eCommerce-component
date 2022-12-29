@@ -147,7 +147,9 @@ function App() {
         {/**Displays plate objects in the cart state */}
         {cart.length === 0 &&
           <h1>Your Cart is Empty</h1>
-
+        }
+        {cart.length > 0 &&
+          <h1>Your Cart</h1>
         }
         {
           cart.map((item, id) => (
