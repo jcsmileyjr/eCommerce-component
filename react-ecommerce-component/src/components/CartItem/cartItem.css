@@ -1,0 +1,56 @@
+.cartItem--container {
+    display: flex;
+}
+
+.cartItem__details--container {
+    padding-left: 10px;
+}
+
+.cartItem__details--container > p {
+    margin: 0;
+}
+
+.cartItem__pic--style {
+    height: 80px;
+}
+
+.cartItem__price--style {
+    font-weight: bold;
+}
+
+.details--control-container {
+    display: flex;
+}
+
+.control--container {
+    flex:1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control__arrow-container {
+    background-color: purple;
+    border-radius: 30px;
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control__plateCount--style {
+    font-weight: bold;
+}
+
+.details__totalPrice--style {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    margin: 10px;
+}
+
+.rightArrow {
+    transform: rotate(180deg);
+}

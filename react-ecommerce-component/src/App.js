@@ -35,7 +35,11 @@ function App() {
       </section>
       <section id="cart">
         <h1>Your Cart</h1>
-        <CartItem pic={FrenchFries} foodPrice="2.23" />
+        {
+          cart.map((item, id) => (
+            <CartItem key={item.foodID} plateCount={item.numberOfPlates} pic={plateImages[item.foodID]} itemTitle={menu[item.foodID].foodTitle} itemPrice={menu[item.foodID].foodPrice} />
+          ))
+        }
       </section>
     </div>
   );
