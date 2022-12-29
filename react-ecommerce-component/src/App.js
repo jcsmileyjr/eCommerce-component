@@ -20,7 +20,25 @@ function App() {
   const [cart, setCart] = useState([]);
 
   /**
+   * Function to remove a plate from the CartItem component
+   * @param {number} id 
+   */
+  const removePlate = (id) => {
+    setCart(cart.map((plate) => {
+      if(plate.foodID === id){
+        if(plate.numberOfPlates > 0){
+          plate.numberOfPlates -= 1;
+        }
+        return plate;
+      }else{
+        return plate;
+      }
+    }))
+  }
+
+  /**
    * Function to add a plate to the cart
+   * @param {string} id - Id of menu item 
    */
   const addPlate = (id) => {
     setCart(cart.map((plate) => {
@@ -85,7 +103,7 @@ function App() {
         {/**Displays plate objects in the cart state */}
         {
           cart.map((item, id) => (
-            <CartItem addPlate={()=> addPlate(item.foodID)} key={item.foodID} plateCount={item.numberOfPlates} pic={plateImages[item.foodID]} itemTitle={menu[item.foodID].foodTitle} itemPrice={menu[item.foodID].foodPrice} />
+            <CartItem removePlate={() => removePlate(item.foodID)} addPlate={()=> addPlate(item.foodID)} key={item.foodID} plateCount={item.numberOfPlates} pic={plateImages[item.foodID]} itemTitle={menu[item.foodID].foodTitle} itemPrice={menu[item.foodID].foodPrice} />
           ))
         }
       </section>
