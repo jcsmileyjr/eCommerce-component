@@ -18,6 +18,7 @@ import Plates from './data/plate.json'
 function App() {
   const [menu, setMenu] = useState(Plates);
   const [cart, setCart] = useState([]);
+  const [showMobileCart, setShowMobileCart] = useState(true);
 
   /**
    * Function to remove a plate from the CartItem component
@@ -108,12 +109,26 @@ function App() {
     }
   }
 
+  /**
+   * Function to show the cart in mobile view but only if the cart has items in it
+   */
+  const displayMobileCart = () => {
+    if(cart.length > 0){
+      setShowMobileCart(false);
+    }
+  }
+
   // Array of images to matched the plate lunch array indexes
   const plateImages = [FrenchFries, SalmanPlate, BaconEggs, ChickenSalad, Spaghetti, Ravioli, Tortellini];
   return (
     <div className="App">      
-      <section id="menu">
-        <h1>To Go Menu</h1>
+      <section id="menu" className={`${!showMobileCart?'hideUI':'showUI'}`}>
+        <h1 className='desktop__header--style'>To Go Menu</h1>
+        <div className='mobile__header--container'>
+          <h1 onClick={()=> setShowMobileCart(true)}>To Go Menu</h1>
+          <span></span>
+          <h1 onClick={()=> displayMobileCart()}>Your Cart</h1>
+        </div>
         {/**Displays the menu plates details and images */}
         {
           menu.map((plate, id) => (
@@ -121,11 +136,17 @@ function App() {
           ))
         }
       </section>
-      <section id="cart">
-        <h1>Your Cart</h1>
+      <section id="cart" className={`${showMobileCart?'hideUI':'showUI'}`}>
+        {cart.length > 0 &&
+          <div className='mobile__header--container'>
+            <h1 onClick={()=> setShowMobileCart(true)}>To Go Menu</h1>
+            <span></span>
+            <h1 onClick={()=> displayMobileCart()}>Your Cart</h1>
+          </div>
+        }
         {/**Displays plate objects in the cart state */}
         {cart.length === 0 &&
-          <h2>Your Cart is Empty</h2>
+          <h1>Your Cart is Empty</h1>
 
         }
         {
