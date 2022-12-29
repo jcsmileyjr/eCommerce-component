@@ -15,3 +15,44 @@ section {
   padding-left: 20px;
 }
 
+.mobile__header--container {
+  display: none;
+}
+
+
+
+@media only screen and (max-width:600px){
+  /* #cart {
+    display: none;
+  } */
+
+  .showUI {
+    display: block;
+  }
+  
+  .hideUI {
+    display: none;
+  }
+
+  .desktop__header--style {
+    display: none;
+  }
+
+  .mobile__header--container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .mobile__header--container span {
+    border: 2px solid black;
+    height: 15px;
+    margin:0 5px;
+  }
+
+  section {
+    padding-left: 10px;
+  }
+
+}
+
