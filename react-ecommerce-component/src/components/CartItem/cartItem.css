@@ -41,6 +41,7 @@
 
 .control__plateCount--style {
     font-weight: bold;
+    padding: 0 5px;
 }
 
 .details__totalPrice--style {
