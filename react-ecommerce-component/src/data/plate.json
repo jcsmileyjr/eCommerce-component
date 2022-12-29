@@ -1,0 +1,52 @@
+[
+    {
+        "foodID": "1", 
+        "foodTitle":"French Fries with Ketchup",
+        "foodPrice":"$2.23",
+        "bgColor":"lightBlue",
+        "isInCart": false,
+        "picture":"FrenchFries"
+    },
+    {
+        "foodID": "2", 
+        "foodTitle":"Salmon and Vegetables",
+        "foodPrice":"$5.12",
+        "bgColor":"lightPink",
+        "isInCart": false
+    },
+    {
+        "foodID": "3", 
+        "foodTitle":"Bacon and Eggs All-Star Breakfast",
+        "foodPrice":"$3.39",
+        "bgColor":"lightBlue",
+        "isInCart": false
+    },
+    {
+        "foodID": "4", 
+        "foodTitle":"Chrunchy Chicken Salad",
+        "foodPrice":"$4.50",
+        "bgColor":"lightPink",
+        "isInCart": false
+    },
+    {
+        "foodID": "5", 
+        "foodTitle":"Hot Spaghetti and Meat Sauce",
+        "foodPrice":"$4.15",
+        "bgColor":"lightBlue",
+        "isInCart": false
+    },
+    {
+        "foodID": "6", 
+        "foodTitle":"Delicous Meaty Ravioli",
+        "foodPrice":"$6.25",
+        "bgColor":"lightPink",
+        "isInCart": false
+    },
+    {
+        "foodID": "7", 
+        "foodTitle":"Fried Tortellini",
+        "foodPrice":"$7.00",
+        "bgColor":"lightBlue",
+        "isInCart": false
+    }
+]
