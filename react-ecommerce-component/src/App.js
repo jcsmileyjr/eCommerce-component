@@ -24,6 +24,7 @@ function App() {
    * @param {number} id 
    */
   const removePlate = (id) => {
+    // Update the CartItem's number of plates
     setCart(cart.map((plate) => {
       if(plate.foodID === id){
         if(plate.numberOfPlates > 0){
@@ -34,6 +35,12 @@ function App() {
         return plate;
       }
     }))
+    
+    // Remove the CartItem plate when it's zero
+    setCart(cart.filter((plate) => plate.numberOfPlates !== 0))
+
+    //Update the MenuItem "in cart" notificiation
+    
   }
 
   /**
