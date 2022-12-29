@@ -14,7 +14,7 @@ const CartItem = ({pic, itemTitle, itemPrice, plateCount, addPlate, removePlate}
                         <span className='control__plateCount--style'>{plateCount}</span>
                         <span onClick={addPlate} className='control__arrow-container rightArrow'><img src={Arrow} className="cartItem__arrow--style" alt="" /></span>
                     </div>
-                    <p className='details__totalPrice--style'>{itemPrice}</p>
+                    <p className='details__totalPrice--style'>${itemPrice * plateCount}</p>
                 </div>
             </div>
         </div>
