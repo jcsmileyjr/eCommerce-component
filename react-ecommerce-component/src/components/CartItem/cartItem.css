@@ -1,5 +1,7 @@
 .cartItem--container {
     display: flex;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 10px;
 }
 
 .cartItem__details--container {
