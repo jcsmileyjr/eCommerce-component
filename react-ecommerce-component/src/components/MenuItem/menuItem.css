@@ -60,3 +60,22 @@
 .hide {
     display: none;
 }
+
+@media only screen and (max-width:300px){
+    .menuItem--container {
+        flex-direction: column;
+    }
+
+    .menuItem__inCart--container {
+        top: 15px;
+    }
+
+    .menuItem__foodTitle--style {
+        margin-top: 0;
+    }
+
+    .menuItem__image--style {
+        margin-bottom: -30px;
+        margin-top: 15px;
+    }
+}
