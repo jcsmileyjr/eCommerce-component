@@ -20,7 +20,27 @@ import Plates from './data/plate.json'
  */
 function App() {
   const [menu, setMenu] = useState(Plates);
-  const [cart, setCart] = useState([{"foodID":2, numberOfPlates:2}]);
+  const [cart, setCart] = useState([{"foodID":2, numberOfPlates:2}, {"foodID":4, numberOfPlates:3}]);
+
+  /**
+   * Function to add one plate meal type to the cart when the user click a menu item and update the 
+   * menu's "In cart" notification.
+   * @param {string} id 
+   * TODO: When the menu's plate meal is clicked, add data to the cart state. 
+   * TODO: User should see the "in cart" check on the menu.
+   * TODO: User should see the plate meal in the cart with one item and the total equal to one item worth.
+  */
+  const addToCart = (id) => {
+    setCart([...cart, {"foodID":id, numberOfPlates:1}]);
+    setMenu(menu.map( (item) => {
+      if(item.foodID === id){
+        item.isInCart = true;
+        return item;
+      }else{
+        return item;
+      }
+    }))
+  }
 
   const plateImages = [FrenchFries, SalmanPlate, BaconEggs, ChickenSalad, Spaghetti, Ravioli, Tortellini];
   return (
@@ -29,7 +49,7 @@ function App() {
         <h1>To Go Menu</h1>
         {
           menu.map((plate, id) => (
-            <MenuItem key={plate.foodID} pic={plateImages[id]} foodTitle={plate.foodTitle} foodPrice={plate.foodPrice} bgColor={plate.bgColor} isInCart={plate.isInCart} />
+            <MenuItem action={() => addToCart(plate.foodID)} key={plate.foodID} pic={plateImages[id]} foodTitle={plate.foodTitle} foodPrice={plate.foodPrice} bgColor={plate.bgColor} isInCart={plate.isInCart} />
           ))
         }
       </section>

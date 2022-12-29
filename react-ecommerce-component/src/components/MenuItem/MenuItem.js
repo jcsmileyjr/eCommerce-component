@@ -1,9 +1,9 @@
 import "./menuItem.css";
 import CheckIcon from '../../assets/check.svg';
 
-const MenuItem = ({pic, foodTitle, foodPrice, isInCart, bgColor}) => {
+const MenuItem = ({pic, foodTitle, foodPrice, isInCart, bgColor, action}) => {
   return (
-    <div className={`menuItem--container ${bgColor}`}>
+    <div className={`menuItem--container ${bgColor}`} onClick={action}>
       <img src={pic} className="menuItem__image--style" alt="" />
       <div className="menuItem__details--container">
         <p className="menuItem__foodTitle--style">{foodTitle}</p>
