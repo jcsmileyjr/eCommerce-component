@@ -10,6 +10,7 @@ import Spaghetti from './assets/plate__spaghetti-meat-sauce.png';
 import Tortellini from './assets/plate__tortellini.png';
 import React, {useState} from 'react'
 import Plates from './data/plate.json'
+// {"foodID":2, numberOfPlates:2}, {"foodID":4, numberOfPlates:3}
 
 /**
  * TODO: Create a data format state for food items
@@ -20,26 +21,39 @@ import Plates from './data/plate.json'
  */
 function App() {
   const [menu, setMenu] = useState(Plates);
-  const [cart, setCart] = useState([{"foodID":2, numberOfPlates:2}, {"foodID":4, numberOfPlates:3}]);
+  const [cart, setCart] = useState([]);
 
   /**
    * Function to add one plate meal type to the cart when the user click a menu item and update the 
    * menu's "In cart" notification.
-   * @param {string} id 
-   * TODO: When the menu's plate meal is clicked, add data to the cart state. 
-   * TODO: User should see the "in cart" check on the menu.
-   * TODO: User should see the plate meal in the cart with one item and the total equal to one item worth.
+   * @param {string} id - Id of menu item chosen by the  user
   */
   const addToCart = (id) => {
-    setCart([...cart, {"foodID":id, numberOfPlates:1}]);
-    setMenu(menu.map( (item) => {
-      if(item.foodID === id){
-        item.isInCart = true;
-        return item;
-      }else{
-        return item;
-      }
-    }))
+    const isFoodItemInCart = cart.find((foodItem) => foodItem.foodID === id);
+
+    if(isFoodItemInCart !== undefined){
+      setCart(cart.map((plate) => {
+        if(plate.foodID === id){
+          plate.numberOfPlates += 1;
+          return plate;
+        }else{
+          return plate;
+        }
+      }))
+    }else{
+      // Add user's choice of plates to the cart
+      setCart([...cart, {"foodID":id, numberOfPlates:1}]);
+      
+      // Update the menu "in cart" notification
+      setMenu(menu.map( (item) => {
+        if(item.foodID === id){
+          item.isInCart = true;
+          return item;
+        }else{
+          return item;
+        }
+      }))
+    }
   }
 
   const plateImages = [FrenchFries, SalmanPlate, BaconEggs, ChickenSalad, Spaghetti, Ravioli, Tortellini];
