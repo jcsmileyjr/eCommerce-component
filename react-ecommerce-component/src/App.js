@@ -13,11 +13,7 @@ import Plates from './data/plate.json'
 // {"foodID":2, numberOfPlates:2}, {"foodID":4, numberOfPlates:3}
 
 /**
- * TODO: Create a data format state for food items
- * TODO: Create a cart array state
- * TODO: Function that when an menu item is click, the id is add to the cart state. 
- * If the id already exist, update number of items. Update the total amount displayed.
- * 
+ * React app that displays an menu of food plates that when clicked updates a cart.
  */
 function App() {
   const [menu, setMenu] = useState(Plates);
@@ -31,6 +27,7 @@ function App() {
   const addToCart = (id) => {
     const isFoodItemInCart = cart.find((foodItem) => foodItem.foodID === id);
 
+    // Check if the plate is already in the cart. If so, update the cart inventory. If not, add to the cart.
     if(isFoodItemInCart !== undefined){
       setCart(cart.map((plate) => {
         if(plate.foodID === id){
@@ -56,11 +53,13 @@ function App() {
     }
   }
 
+  // Array of images to matched the plate lunch array indexes
   const plateImages = [FrenchFries, SalmanPlate, BaconEggs, ChickenSalad, Spaghetti, Ravioli, Tortellini];
   return (
     <div className="App">      
       <section id="menu">
         <h1>To Go Menu</h1>
+        {/**Displays the menu plates details and images */}
         {
           menu.map((plate, id) => (
             <MenuItem action={() => addToCart(plate.foodID)} key={plate.foodID} pic={plateImages[id]} foodTitle={plate.foodTitle} foodPrice={plate.foodPrice} bgColor={plate.bgColor} isInCart={plate.isInCart} />
@@ -69,6 +68,7 @@ function App() {
       </section>
       <section id="cart">
         <h1>Your Cart</h1>
+        {/**Displays plate objects in the cart state */}
         {
           cart.map((item, id) => (
             <CartItem key={item.foodID} plateCount={item.numberOfPlates} pic={plateImages[item.foodID]} itemTitle={menu[item.foodID].foodTitle} itemPrice={menu[item.foodID].foodPrice} />
